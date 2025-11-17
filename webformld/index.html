@@ -1,0 +1,724 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Phiếu Đăng Ký Lao Động</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #BBDEFB;
+    }
+    header {
+      background: linear-gradient(45deg, #4CAF50, #66BB6A);
+      color: white;
+      padding: 40px;
+      text-align: center;
+      position: relative;
+    }
+    .logo {
+      width: 120px;
+      position: absolute;
+      top: 15px;
+      left: 30px;
+      animation: spin 5s linear infinite;
+    }
+    @keyframes spin {
+      from {transform: rotateY(0deg);}
+      to {transform: rotateY(360deg);}
+    }
+    form {
+      background: white;
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    fieldset {
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+    legend {
+      font-weight: bold;
+      color: #4CAF50;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    select, input[type="text"], input[type="date"], input[type="email"], textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #45a049; }
+    .hidden { display: none; }
+
+    /* Thông báo ngay trên nút gửi */
+    #formMessage {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    #formMessage.success {
+      background-color: #e8f5e9;
+      color: #2e7d32;
+      border: 1px solid #81c784;
+    }
+    #formMessage.error {
+      background-color: #ffebee;
+      color: #c62828;
+      border: 1px solid #ef9a9a;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://i.postimg.cc/VkgKjSRZ/TRUNG-T-M-D-CH-V-VI-C-L-M-LOGO12.png" alt="Logo" class="logo">
+  <h1>PHIẾU ĐĂNG KÝ DÀNH CHO LAO ĐỘNG</h1>
+</header>
+
+<form id="registrationForm">
+   <fieldset>
+    <legend>1. Thông tin cá nhân</legend>
+    <label>Họ và tên*</label>
+    <input type="text" name="ho_va_ten" required>
+
+    <label>Số CMND/CCCD*</label>
+    <input type="text" name="so_cccd" required>
+
+    <label>Ngày sinh*</label>
+    <input type="date" name="ngay_sinh" required>
+
+    <label>Giới tính*</label>
+    <label><input type="radio" name="gioi_tinh" value="Nam" required> Nam</label>
+    <label><input type="radio" name="gioi_tinh" value="Nữ" required> Nữ</label>
+
+    <label>Dân tộc*</label>
+<select name="dan_toc" required>
+  <option value="">--Chọn dân tộc--</option>
+  <option>Kinh</option>
+  <option>Tày</option>
+  <option>Thái</option>
+  <option>Hoa</option>
+  <option>Khơ-me</option>
+  <option>Mường</option>
+  <option>Nùng</option>
+  <option>HMông</option>
+  <option>Dao</option>
+  <option>Gia-rai</option>
+  <option>Ngái</option>
+  <option>Ê-đê</option>
+  <option>Ba na</option>
+  <option>Xơ-Đăng</option>
+  <option>Sán Chay</option>
+  <option>Cơ-ho</option>
+  <option>Chăm</option>
+  <option>Sán Dìu</option>
+  <option>Hrê</option>
+  <option>Mnông</option>
+  <option>Ra-glai</option>
+  <option>Xtiêng</option>
+  <option>Bru-Vân Kiều</option>
+  <option>Thổ</option>
+  <option>Giáy</option>
+  <option>Cơ-tu</option>
+  <option>Gié Triêng</option>
+  <option>Mạ</option>
+  <option>Khơ-mú</option>
+  <option>Co</option>
+  <option>Ca-dong</option>
+  <option>Tà-ôi</option>
+  <option>Chơ-ro</option>
+  <option>Kháng</option>
+  <option>Xinh-mun</option>
+  <option>Hà Nhì</option>
+  <option>Chu ru</option>
+  <option>Lào</option>
+  <option>La Chí</option>
+  <option>La Ha</option>
+  <option>Phù Lá</option>
+  <option>La Hủ</option>
+  <option>Lự</option>
+  <option>Lô Lô</option>
+  <option>Chứt</option>
+  <option>Mảng</option>
+  <option>Pà Thẻn</option>
+  <option>Co Lao</option>
+  <option>Cống</option>
+  <option>Bố Y</option>
+  <option>Si La</option>
+  <option>Pu Péo</option>
+  <option>Brâu</option>
+  <option>Ơ Đu</option>
+  <option>Rơ măm</option>
+</select>
+
+    
+    <label>Tôn giáo</label>
+<select name="ton_giao">
+  <option value="">--Chọn tôn giáo--</option>
+  <option>Không</option>
+  <option>Phật giáo</option>
+  <option>Công giáo</option>
+  <option>Tin lành</option>
+  <option>Cao Đài</option>
+  <option>Phật giáo Hòa Hảo</option>
+  <option>Hồi giáo</option>
+  <option>Tôn giáo Baha'i</option>
+  <option>Tịnh độ Cư sỹ Phật hội Việt Nam</option>
+  <option>Đạo Tứ Ân Hiếu nghĩa</option>
+  <option>Bửu Sơn Kỳ hương</option>
+  <option>Giáo hội Phật đường Nam Tông Minh Sư đạo</option>
+  <option>Hội thánh Minh lý đạo - Tam Tông Miếu</option>
+  <option>Chăm Bà la môn</option>
+  <option>Mormon</option>
+  <option>Phật giáo Hiếu Nghĩa Tà Lơn (Cấp đăng ký hoạt động)</option>
+  <option>Giáo hội Cơ đốc Phục lâm Việt Nam</option>
+</select>
+
+
+    <label>Nơi ở hiện nay</label>
+    <select name="noi_o_hien_nay" required>
+      <option value="">--Chọn--</option>
+      <option>Phường Cẩm Thành</option>
+      <option>Phường Nghĩa Lộ</option>
+      <option>Phường Trương Quang Trọng</option>
+      <option>Phường Trà Câu</option>
+      <option>Phường Đức Phổ</option>
+      <option>Phường Sa Huỳnh</option>
+      <option>Xã An Phú</option>
+      <option>Xã Nguyễn Nghiêm</option>
+      <option>Xã Tịnh Khê</option>
+      <option>Xã Khánh Cường</option>
+      <option>Xã Bình Sơn</option>
+      <option>Xã Bình Minh</option>
+      <option>Xã Bình Chương</option>
+      <option>Xã Đông Sơn</option>
+      <option>Xã Vạn Tường</option>
+      <option>Xã Trường Giang</option>
+      <option>Xã Ba Gia</option>
+      <option>Xã Sơn Tịnh</option>
+      <option>Xã Thọ Phong</option>
+      <option>Xã Tư Nghĩa</option>
+      <option>Xã Nghĩa Giang</option>
+      <option>Xã Vệ Giang</option>
+      <option>Xã Trà Giang</option>
+      <option>Xã Nghĩa Hành</option>
+      <option>Xã Đình Cương</option>
+      <option>Xã Thiện Tín</option>
+      <option>Xã Phước Giang</option>
+      <option>Xã Long Phụng</option>
+      <option>Xã Mỏ Cày</option>
+      <option>Xã Mộ Đức</option>
+      <option>Xã Lân Phong</option>
+      <option>Xã Trà Bồng</option>
+      <option>Xã Đông Trà Bồng</option>
+      <option>Xã Cà Đam</option>
+      <option>Xã Thanh Bồng</option>
+      <option>Xã Tây Trà Bồng</option>
+      <option>Xã Tây Trà</option>
+      <option>Xã Sơn Hà</option>
+      <option>Xã Sơn Kỳ</option>
+      <option>Xã Sơn Linh</option>
+      <option>Xã Sơn Hạ</option>
+      <option>Xã Sơn Thủy</option>
+      <option>Xã Sơn Tây Hạ</option>
+      <option>Xã Sơn Tây</option>
+      <option>Xã Sơn Tây Thượng</option>
+      <option>Xã Minh Long</option>
+      <option>Xã Sơn Mai</option>
+      <option>Xã Ba Vì</option>
+      <option>Xã Ba Tô</option>
+      <option>Xã Ba Dinh</option>
+      <option>Xã Ba Tơ</option>
+      <option>Xã Ba Động</option>
+      <option>Xã Ba Vinh</option>
+      <option>Xã Đặng Thùy Trâm</option>
+      <option>Xã Ba Xa</option>
+      <option>Đặc khu Lý Sơn</option>
+      <option>Phường Kon Tum</option>
+      <option>Phường Đăk Cấm</option>
+      <option>Phường Đăk BLa</option>
+      <option>Xã Ngọk Bay</option>
+      <option>Xã Ia Chim</option>
+      <option>Xã Đăk Rơ Wa</option>
+      <option>Xã Đăk Pxi</option>
+      <option>Xã Đăk Mar</option>
+      <option>Xã Đăk Ui</option>
+      <option>Xã Ngọk Réo</option>
+      <option>Xã Đăk Hà</option>
+      <option>Xã Ngọk Tụ</option>
+      <option>Xã Đăk Tô</option>
+      <option>Xã Kon Đào</option>
+      <option>Xã Đăk Sao</option>
+      <option>Xã Đăk Tờ Kan</option>
+      <option>Xã Măng Ri</option>
+      <option>Xã Bờ Y</option>
+      <option>Xã Sa Loong</option>
+      <option>Xã Dục Nông</option>
+      <option>Xã Xốp</option>
+      <option>Xã Ngọc Linh</option>
+      <option>Xã Đăk PLô</option>
+      <option>Xã Đăk Pék</option>
+      <option>Xã Đăk Môn</option>
+      <option>Xã Sa Thầy</option>
+      <option>Xã Sa Bình</option>
+      <option>Xã Ya Ly</option>
+      <option>Xã Ia Tơi</option>
+      <option>Xã Đăk Kôi</option>
+      <option>Xã Kon Braih</option>
+      <option>Xã Đăk Rve</option>
+      <option>Xã Măng Đen</option>
+      <option>Xã Măng Bút</option>
+      <option>Xã Kon Plông</option>
+      <option>Xã Tu Mơ Rông</option>
+      <option>Xã Đăk Long</option>
+      <option>Xã Mô Rai</option>
+      <option>Xã Ia Đal</option>
+      <option>Xã Rờ Kơi</option>
+      <option>Khác</option>
+    </select>
+
+    <label>Địa chỉ cụ thể*</label>
+    <input type="text" name="dia_chi_cu_the" required>
+
+    <label for="so_dien_thoai">Số điện thoại*</label>
+    <input type="text" id="so_dien_thoai" name="so_dien_thoai" required pattern="0[0-9]{9}" placeholder="Ví dụ: 0901234567">
+    <small>Nhập đủ 10 số, bắt đầu bằng 0</small>
+
+    <label>Email</label>
+    <input type="email" name="email">
+
+     <fieldset>
+  <legend>Đối tượng ưu tiên</legend>
+
+  <label>
+    <input type="checkbox" name="doi_tuong_uu_tien" value="Người khuyết tật">
+    Người khuyết tật
+  </label>
+
+  <label>
+    <input type="checkbox" name="doi_tuong_uu_tien" value="Bộ đội xuất ngũ">
+    Bộ đội xuất ngũ
+  </label>
+
+  <label>
+    <input type="checkbox" name="doi_tuong_uu_tien" value="Người thuộc hộ nghèo, cận nghèo">
+    Người thuộc hộ nghèo, cận nghèo
+  </label>
+
+  <label>
+    <input type="checkbox" name="doi_tuong_uu_tien" value="Người dân tộc thiểu số">
+    Người dân tộc thiểu số
+  </label>
+</fieldset>
+
+  </fieldset>
+
+  <fieldset>
+    <legend>2. Trình độ học vấn, chuyên môn kỹ thuật</legend>
+    <label>Trình độ học vấn*</label>
+    <select name="trinh_do_hoc_van" required>
+      <option value="">--Chọn--</option>
+      <option>Chưa tốt nghiệp Tiểu học</option>
+      <option>Tốt nghiệp Tiểu học</option>
+      <option>Tốt nghiệp Trung học cơ sở</option>
+      <option>Tốt nghiệp Trung học phổ thông</option>
+    </select>
+
+    <label>Trình độ CMKT cao nhất*</label>
+    <select name="trinh_do_cmkt" required>
+      <option value="">--Chọn--</option>
+      <option>Chưa qua đào tạo</option>
+      <option>CNKT không bằng</option>
+      <option>Sơ cấp</option>
+      <option>Trung cấp</option>
+      <option>Cao đẳng</option>
+      <option>Đại học</option>
+      <option>Thạc sĩ</option>
+      <option>Tiến sĩ</option>
+    </select>
+
+    <label>Chuyên ngành đào tạo</label>
+    <input type="text" name="chuyen_nganh">
+
+    <label>Trình độ khác</label>
+    <input type="text" name="trinh_do_khac">
+
+    <label>Kỹ năng nghề</label>
+    <input type="text" name="ky_nang_nghe">
+
+    <label>Ngoại ngữ</label>
+    <select name="ngoai_ngu">
+      <option value="">--Chọn--</option>
+      <option>Không</option>
+      <option>Tiếng Anh</option>
+      <option>Tiếng Trung</option>
+      <option>Tiếng Nhật</option>
+      <option>Tiếng Hàn</option>
+      <option>Khác</option>
+    </select>
+
+    <label>Chứng chỉ</label>
+    <input type="text" name="chung_chi">
+
+    <label>Khả năng ngoại ngữ</label>
+    <select name="kha_nang_ngoai_ngu">
+      <option value="">--Chọn--</option>
+      <option>Tốt</option>
+      <option>Khá</option>
+      <option>Trung bình</option>
+    </select>
+
+    <label>Tin học</label>
+    <select name="tin_hoc">
+      <option value="">--Chọn--</option>
+      <option>Văn phòng</option>
+      <option>Kỹ thuật viên tin học</option>
+    </select>
+
+    <label>Khả năng tin học</label>
+    <select name="kha_nang_tin_hoc">
+      <option value="">--Chọn--</option>
+      <option>Tốt</option>
+      <option>Khá</option>
+      <option>Trung bình</option>
+    </select>
+
+    <label>Kỹ năng mềm</label>
+    <select name="ky_nang_mem">
+      <option value="">--Chọn--</option>
+      <option>Giao tiếp</option>
+      <option>Thuyết trình</option>
+      <option>Quản lý thời gian</option>
+      <option>Quản lý nhân sự</option>
+      <option>Tổng hợp, báo cáo</option>
+      <option>Thích ứng</option>
+      <option>Làm việc nhóm</option>
+      <option>Làm việc độc lập</option>
+      <option>Chịu áp lực công việc</option>
+      <option>Theo dõi giám sát</option>
+      <option>Tư duy phản biện</option>
+    </select>
+
+    <label>Kỹ năng mềm khác</label>
+    <input type="text" name="ky_nang_mem_khac">
+  </fieldset>
+
+  <fieldset>
+    <label>Tên đơn vị</label>
+    <input type="text" name="ten_don_vi">
+
+    <label>Chức vụ</label>
+    <input type="text" name="chuc_vu">
+
+    <label>Công việc chính</label>
+    <input type="text" name="cong_viec_chinh">
+
+    <legend>3. Kinh nghiệm làm việc (nếu có)</legend>
+    <label>Kinh nghiệm</label>
+    <input type="text" name="kinh_nghiem">
+
+    <label>Làm việc ở nước ngoài</label>
+    <input type="text" name="lam_viec_nuoc_ngoai">
+  </fieldset>
+  
+  <fieldset>
+    <legend>4. Đăng ký dịch vụ</legend>
+    <label><input type="checkbox" name="dich_vu" value="Tư vấn chính sách, pháp luật lao động"> Tư vấn chính sách, pháp luật lao động</label>
+    <label><input type="checkbox" name="dich_vu" value="Tư vấn việc làm"> Tư vấn việc làm</label>
+    <label><input type="checkbox" name="dich_vu" value="Tư vấn về đào tạo, kỹ năng nghề"> Tư vấn về đào tạo, kỹ năng nghề</label>
+    <label><input type="checkbox" id="dk_tim_viec" name="dich_vu" value="Đăng ký tìm việc làm"> Đăng ký tìm việc làm</label>
+  </fieldset>
+
+  <fieldset id="formCon" class="hidden">
+    <legend>PHIẾU ĐĂNG KÝ TÌM VIỆC LÀM</legend>
+    <label>Việc làm mong muốn</label>
+    <input type="text" name="viec_lam_mong_muon">
+
+    <label>Loại hình doanh nghiệp</label>
+    <select name="loai_hinh_doanh_nghiep">
+      <option value="">--Chọn--</option>
+      <option>Nhà nước</option>
+      <option>Ngoài nhà nước</option>
+      <option>Có vốn đầu tư nước ngoài</option>
+    </select>
+ 
+    <label>Tên công ty, doanh nghiệp mong muốn làm việc</label>
+    <input type="text" name="cong_ty_mong_muon">
+    
+    <label>Tên công việc*</label>
+    <input type="text" name="ten_cong_viec" required>
+
+    <label>Mô tả công việc*</label>
+    <textarea name="mo_ta_cong_viec" required></textarea>
+
+    <label>Chức vụ*</label>
+    <select name="chuc_vu_tim_viec" required>
+      <option value="">--Chọn--</option>
+      <option>Nhân viên</option>
+      <option>Quản lý</option>
+      <option>Lãnh đạo</option>
+    </select>
+
+    <label>Kinh nghiệm lĩnh vực cần tìm*</label>
+    <select name="kinh_nghiem_linh_vuc">
+      <option value="">--Chọn--</option>
+      <option>Không có</option>
+      <option>Dưới 1 năm</option>
+      <option>Từ 1 đến 2 năm</option>
+      <option>Từ 2 đến 5 năm</option>
+      <option>Trên 5 năm</option>
+    </select>
+
+    <label>Nơi làm việc ưu tiên*</label>
+    <select name="noi_lam_viec_uu_tien" required>
+      <option value="">--Chọn--</option>
+      <option>Khu công nghiệp</option>
+      <option>Ngoài khu công nghiệp</option>
+    </select>
+
+    <label>Loại hợp đồng LĐ*</label>
+    <select name="loai_hop_dong">
+      <option value="">--Chọn--</option>
+      <option>Không xác định thời hạn</option>
+      <option>Xác định dưới 12 tháng</option>
+      <option>Xác định 12-36 tháng</option>
+    </select>
+
+    <label>Khả năng đáp ứng</label>
+    <select name="kha_nang_dap_ung">
+      <option value="">--Chọn--</option>
+      <option>Làm ca</option>
+      <option>Đi công tác</option>
+      <option>Đi biệt phái</option>
+    </select>
+
+    <label>Hình thức làm việc</label>
+    <select name="hinh_thuc_lam_viec" required>
+      <option value="">--Chọn--</option>
+      <option>Toàn thời gian</option>
+      <option>Bán thời gian</option>
+    </select>
+
+    <label>Mục đích làm việc*</label>
+    <select name="muc_dich_lam_viec" required>
+      <option value="">--Chọn--</option>
+      <option>Làm việc lâu dài</option>
+      <option>Làm việc tạm thời</option>
+      <option>Làm thêm</option>
+    </select>
+
+    <label>Mức lương*</label>
+    <select name="muc_luong" required>
+      <option value="">--Chọn--</option>
+      <option>Dưới 5 triệu</option>
+      <option>5 -10 triệu</option>
+      <option>10 - 20 triệu</option>
+      <option>20 - 50 triệu</option>
+      <option>>50 triệu</option>
+      <option>Lương ngày vnđ/ngày</option>
+      <option>Lương giờ vnđ/giờ</option>
+      <option>Thỏa thuận khi phỏng vấn</option>
+      <option>Hoa hồng theo doanh thu/sản phẩm</option>
+    </select>
+
+<fieldset>
+  <legend>Chế độ phúc lợi*</legend>
+  <label><input type="checkbox" class="che_do_phuc_loi_checkbox" name="che_do_phuc_loi" value="1 bữa"> 1 bữa ăn</label>
+  <label><input type="checkbox" class="che_do_phuc_loi_checkbox" name="che_do_phuc_loi" value="2 bữa"> 2 bữa ăn</label>
+  <label><input type="checkbox" class="che_do_phuc_loi_checkbox" name="che_do_phuc_loi" value="3 bữa"> 3 bữa ăn</label>
+  <label><input type="checkbox" class="che_do_phuc_loi_checkbox" name="che_do_phuc_loi" value="Bằng tiền"> Bằng tiền</label>
+  <label><input type="checkbox" class="che_do_phuc_loi_checkbox" name="che_do_phuc_loi" value="Không hỗ trợ"> Không hỗ trợ</label>
+  <label><input type="checkbox" class="che_do_phuc_loi_checkbox" name="che_do_phuc_loi" value="Đóng BHXH, BHYT, BHTN"> Đóng BHXH, BHYT, BHTN</label>
+  <label><input type="checkbox" class="che_do_phuc_loi_checkbox" name="che_do_phuc_loi" value="BH nhân thọ"> BH nhân thọ</label>
+  <label><input type="checkbox" class="che_do_phuc_loi_checkbox" name="che_do_phuc_loi" value="Trợ cấp thôi việc"> Trợ cấp thôi việc</label>
+  <label><input type="checkbox" class="che_do_phuc_loi_checkbox" name="che_do_phuc_loi" value="Nhà trẻ"> Nhà trẻ</label>
+  <label><input type="checkbox" class="che_do_phuc_loi_checkbox" name="che_do_phuc_loi" value="Xe đưa đón"> Xe đưa đón</label>
+  <label><input type="checkbox" class="che_do_phuc_loi_checkbox" name="che_do_phuc_loi" value="Hỗ trợ đi lại"> Hỗ trợ đi lại</label>
+  <label><input type="checkbox" class="che_do_phuc_loi_checkbox" name="che_do_phuc_loi" value="Ký túc xá"> Ký túc xá</label>
+  <label><input type="checkbox" class="che_do_phuc_loi_checkbox" name="che_do_phuc_loi" value="Hỗ trợ nhà ở"> Hỗ trợ nhà ở</label>
+  <label><input type="checkbox" class="che_do_phuc_loi_checkbox" name="che_do_phuc_loi" value="Đào tạo"> Đào tạo</label>
+  <label><input type="checkbox" class="che_do_phuc_loi_checkbox" name="che_do_phuc_loi" value="Lối đi/thiết bị hỗ trợ cho người khuyết tật"> Lối đi/thiết bị hỗ trợ cho người khuyết tật</label>
+  <label><input type="checkbox" class="che_do_phuc_loi_checkbox" name="che_do_phuc_loi" value="Cơ hội thăng tiến"> Cơ hội thăng tiến</label>
+</fieldset>
+    
+    <label>Nơi làm việc</label>
+    <select name="noi_lam_viec">
+      <option value="">--Chọn--</option>
+      <option>Trong nhà</option>
+      <option>Ngoài trời</option>
+      <option>Hỗn hợp</option>
+    </select>
+
+    <label>Trọng lượng nâng</label>
+    <select name="trong_luong_nang">
+      <option value="">--Chọn--</option>
+      <option>Dưới 5kg</option>
+      <option>5 - 20 kg</option>
+      <option>Trên 20 kg</option>
+    </select>
+
+    <label>Đứng hoặc đi lại</label>
+    <select name="dung_hoac_di_lai">
+      <option value="">--Chọn--</option>
+      <option>Hầu như không có</option>
+      <option>Mức trung bình</option>
+      <option>Cần đứng/đi lại nhiều</option>
+    </select>
+
+    <label>Nghe nói</label>
+    <select name="nghe_noi">
+      <option value="">--Chọn--</option>
+      <option>Không cần thiết</option>
+      <option>Nghe nói cơ bản</option>
+      <option>Quan trọng</option>
+    </select>
+
+    <label>Thị lực</label>
+    <select name="thi_luc">
+      <option value="">--Chọn--</option>
+      <option>Mức bình thường</option>
+      <option>Nhìn được vật/chi tiết nhỏ</option>
+    </select>
+
+    <label>Thao tác bằng tay</label>
+    <select name="thao_tac_bang_tay">
+      <option value="">--Chọn--</option>
+      <option>Lắp ráp đồ vật lớn</option>
+      <option>Lắp ráp đồ vật nhỏ</option>
+      <option>Lắp ráp đồ vật rất nhỏ</option>
+    </select>
+
+    <label>Dùng hai tay</label>
+    <select name="dung_hai_tay">
+      <option value="">--Chọn--</option>
+      <option>Cần 2 tay</option>
+      <option>Đôi khi cần 2 tay</option>
+      <option>Chỉ cần 1 tay</option>
+      <option>Trái</option>
+      <option>Phải</option>
+    </select>
+
+    <label>Sẵn sàng làm việc*</label>
+    <select name="san_sang" required>
+      <option value="">--Chọn--</option>
+      <option>Làm việc ngay</option>
+      <option>Làm việc sau</option>
+    </select>
+
+    <label>Thời gian sau (tháng)</label>
+    <input type="text" name="thoi_gian_sau">
+
+    <label>Hình thức tuyển dụng*</label>
+    <select name="hinh_thuc_tuyen_dung" required>
+      <option value="">--Chọn--</option>
+      <option>Trực tiếp</option>
+      <option>Qua điện thoại</option>
+      <option>Phỏng vấn online</option>
+      <option>Nộp CV</option>
+    </select>
+  </fieldset>
+
+  <input type="hidden" name="so_lan_gui" value="1">
+
+  <!-- Thông báo ngay phía trên nút gửi -->
+  <div id="formMessage" class="hidden"></div>
+
+  <button type="submit">Gửi thông tin</button>
+</form>
+
+<script>
+  document.querySelectorAll('input[name="dich_vu"]').forEach(cb => {
+    cb.addEventListener('change', checkShowFormCon);
+  });
+
+  function checkShowFormCon() {
+    const isTimViec = document.getElementById('dk_tim_viec').checked;
+    const formCon = document.getElementById('formCon');
+    formCon.classList.toggle('hidden', !isTimViec);
+
+    // Toggle required trong form con
+    formCon.querySelectorAll('[required]').forEach(el => {
+      el.required = isTimViec;
+    });
+  }
+
+  document.getElementById('registrationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    const object = {};
+
+    // lấy hết dữ liệu của các checkbox
+    const dichVuSelections = [];
+    const phucLoiSelections = [];
+    const uuTienSelections = [];
+
+    formData.forEach((value, key) => {
+      if (key === "dich_vu") {
+        dichVuSelections.push(value);
+      } else if (key === "che_do_phuc_loi") {
+        phucLoiSelections.push(value);
+      } else if (key === "doi_tuong_uu_tien") {
+        uuTienSelections.push(value);
+      } else {
+        object[key] = value;
+      }
+    });
+
+    object.dich_vu = dichVuSelections.join(', ');
+    object.che_do_phuc_loi = phucLoiSelections.join(', ');
+    object.doi_tuong_uu_tien = uuTienSelections.join(', ');
+
+    // Nếu không chọn form con → clear
+    const isTimViec = document.getElementById('dk_tim_viec').checked;
+    if (!isTimViec) {
+      document.querySelectorAll('#formCon [name]').forEach(el => {
+        object[el.name] = "";
+      });
+    }
+    object.so_lan_gui = "1";
+
+    const messageBox = document.getElementById('formMessage');
+
+    fetch('https://script.google.com/macros/s/AKfycbwM9wEiN1f9mkVwOIYspbcG6waYi_WheaZ_k_74PfyF8ouDzGXm377MkOhJCMCJd-Iz/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(object)
+    })
+    .then(() => {
+      // Hiện thông báo thành công ngay trên nút gửi
+      messageBox.textContent = '✅ Gửi thành công!';
+      messageBox.classList.remove('hidden', 'error');
+      messageBox.classList.add('success');
+
+      // Nếu muốn reset form sau gửi:
+      // e.target.reset();
+    })
+    .catch(() => {
+      // Hiện thông báo lỗi
+      messageBox.textContent = '❌ Có lỗi xảy ra, vui lòng thử lại!';
+      messageBox.classList.remove('hidden', 'success');
+      messageBox.classList.add('error');
+    });
+  });
+</script>
+
+</body>
+</html>
